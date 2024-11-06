@@ -15,3 +15,20 @@ variable "tags" {
   type        = map(string)
   sensitive   = false
 }
+#
+variable "get_or_create" {
+  description = "value to determine if the resource group should be created or not"
+  type        = string
+  sensitive   = false
+  default     = "get"
+  validation {
+    condition = can(
+      regex(
+        "create|get",
+        var.get_or_create
+      )
+    )
+    error_message = "get_or_create must be either 'create' or 'get'"
+  }
+}
+#
