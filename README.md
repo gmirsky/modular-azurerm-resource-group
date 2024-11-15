@@ -1,4 +1,4 @@
-# modular-azurerm
+# modular-azurerm-resource-group
 
 Modular Terraform Azurerm
 
